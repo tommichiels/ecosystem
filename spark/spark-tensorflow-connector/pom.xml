@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.tensorflow</groupId>
-    <artifactId>spark-tensorflow-connector_2.12</artifactId>
+    <artifactId>vectr_spark-tensorflow-connector_2.12</artifactId>
     <packaging>jar</packaging>
     <version>1.10.0</version>
     <name>spark-tensorflow-connector</name>
@@ -19,12 +19,6 @@
         </license>
     </licenses>
 
-    <scm>
-        <url>https://github.com/tensorflow/ecosystem.git</url>
-        <connection>git@github.com:tensorflow/ecosystem.git</connection>
-        <developerConnection>scm:git:https://github.com/tensorflow/ecosystem.git</developerConnection>
-    </scm>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scala.maven.version>4.2.0</scala.maven.version>
@@ -34,10 +28,18 @@
         <scala.test.version>3.0.8</scala.test.version>
         <maven.compiler.version>3.8.0</maven.compiler.version>
         <java.version>1.8</java.version>
-        <spark.version>3.0.0-preview</spark.version>
+        <spark.version>2.4.4</spark.version>
         <yarn.api.version>2.7.3</yarn.api.version>
         <junit.version>4.11</junit.version>
     </properties>
+
+    <distributionManagement>
+    <repository>
+     <id>github</id>
+     <name>GitHub OWNER Apache Maven Packages</name>
+     <url>https://maven.pkg.github.com/tommichiels/ecosystem</url>
+   </repository>
+    </distributionManagement>
 
     <build>
         <pluginManagement>
@@ -326,7 +328,7 @@
     <dependencies>
         <dependency>
             <groupId>org.tensorflow</groupId>
-            <artifactId>tensorflow-hadoop</artifactId>
+            <artifactId>vectr_tensorflow-hadoop</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
